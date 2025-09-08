@@ -13,7 +13,8 @@ import {
   Send,
   MessageCircle,
   Clock,
-  Globe
+  Globe,
+  Globe2
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "../hooks/use-toast";
@@ -45,7 +46,7 @@ const contactInfo = [
     title: "Location",
     value: "Patna, India",
     href: "",
-    description: "Open to remote opportunities"
+    description: "Open to remote/global opportunities"
   }
 ];
 
@@ -55,14 +56,21 @@ const socialLinks = [
     name: "GitHub",
     url: "https://github.com/preritnag",
     username: "@preritnag",
-    description: "View my code repositories"
+    description: "Explore my open-source projects & code"
   },
   {
     icon: Linkedin,
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/prerit-nag-378b4a284",
     username: "prerit-nag",
-    description: "Professional networking"
+    description: "Professional networking & collaborations"
+  },
+  {
+    icon: Globe2,
+    name: "Portfolio",
+    url: "https://portfolio-silk-psi.vercel.app",
+    username: "portfolio",
+    description: "View my latest projects and resume"
   }
 ];
 
@@ -78,20 +86,17 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with form data
     const mailtoLink = `mailto:preritnag4@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
     
     window.location.href = mailtoLink;
     
-    // Show success toast
     toast({
       title: "Email client opened!",
       description: "Please send the email from your email client.",
     });
 
-    // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -105,6 +110,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-gradient-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,15 +119,19 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+            Get In{" "}
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Let's discuss opportunities, collaborations, or just have a conversation about technology
+            I’m open to opportunities, collaborations, and discussions about 
+            technology, AI/ML, or building scalable products.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -130,11 +140,11 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">Let’s Connect</h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                I'm always excited to discuss new opportunities, whether it's about 
-                innovative projects, collaborations, or just sharing ideas about technology. 
-                Feel free to reach out through any of the channels below.
+                I love connecting with people who are passionate about tech, 
+                startups, and AI/ML. Whether you have an idea, project, or 
+                collaboration in mind — feel free to reach out.
               </p>
             </div>
 
@@ -203,7 +213,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Quick Stats */}
+            {/* Availability */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -216,8 +226,8 @@ export function Contact() {
                 <h4 className="font-semibold">Quick Response</h4>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                I typically respond to messages within 24 hours. For urgent matters, 
-                feel free to reach out via phone.
+                I typically respond to emails within 24 hours. For urgent 
+                communication, feel free to call me directly.
               </p>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Globe className="h-4 w-4 mr-2" />

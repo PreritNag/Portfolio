@@ -1,39 +1,41 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { CalendarDays, MapPin, Building2, Users, TrendingUp } from "lucide-react";
 
 const experiences = [
-  {
-    company: "Linkefy",
-    role: "Co-founder",
-    location: "Patna, India",
-    period: "2024 - Present",
-    type: "Startup",
-    description: "Spearheading the development of an innovative professional networking platform with AI-powered career suggestions.",
-    achievements: [
-      "Engineered skill-based matchmaking system enhancing professional connections",
-      "Implemented Google/GitHub OAuth authentication for 10,000+ users",
-      "Integrated WebSockets for real-time messaging and GraphQL for optimized data fetching",
-      "Designed scalable backend architecture supporting growing user engagement"
-    ],
-    technologies: ["React.js", "Node.js", "MongoDB", "GraphQL", "WebSockets", "OAuth 2.0", "AI/ML"]
-  },
+  
   {
     company: "OpenWise & RuxaiLab",
     role: "Open Source Contributor",
     location: "Remote",
     period: "2025 - Present",
     type: "Open Source",
-    description: "Contributing to open-source knowledge sharing platform and machine learning projects.",
+    description:
+      "Contributing to open-source projects in web development and NLP pipelines.",
     achievements: [
-      "Implemented new UI components and optimized API performance for OpenWise",
-      "Improved documentation and fixed bugs in NLP pipelines for RuxaiLab",
-      "Submitted 15+ pull requests with 12+ merged into main branches",
-      "Collaborated with maintainers on code reviews and issue triaging"
+      "Revamped OpenWise UI with React.js + TypeScript, improving API efficiency by 20%",
+      "Refined NLP pipelines in Python for RuxaiLab, eliminating bugs and improving documentation",
+      "Authored 15+ pull requests with 2+ merged into main branches",
+      "Collaborated with maintainers through reviews and issue triaging",
     ],
-    technologies: ["React.js", "Python", "NLP", "Machine Learning", "Documentation"]
+    technologies: ["React.js", "TypeScript", "Python", "NLP", "Machine Learning"],
+  },
+  {
+    company: "IBM SkillsBuild",
+    role: "Fellow",
+    location: "Remote",
+    period: "Aug 2025 - Present",
+    type: "Fellowship",
+    description:
+      "Selected from 10,000+ applicants for a full-stack intensive fellowship by IBM.",
+    achievements: [
+      "Built 5+ projects with React, Node.js, and MongoDB meeting 99.8% uptime requirements",
+      "Improved API performance by 40% with optimized backend design and database indexing",
+      "Implemented JWT authentication serving 1,000+ users with 100% compliance",
+      "Collaborated in agile teams, practicing test automation & code reviews",
+    ],
+    technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT", "Agile"],
   },
   {
     company: "Internshala",
@@ -41,21 +43,28 @@ const experiences = [
     location: "Remote",
     period: "Mar 2024 - Present",
     type: "Leadership",
-    description: "Selected among 15,000+ applicants for this national campus leadership program.",
+    description:
+      "Selected among 15,000+ applicants for this nationwide student ambassador program.",
     achievements: [
-      "Promoted online training programs to 5,000+ students through strategic campaigns",
-      "Organized workshops on internship opportunities and career development",
-      "Executed targeted social media marketing campaigns",
-      "Increased platform registrations by 40% through effective outreach"
+      "Promoted career and internship opportunities to 5,000+ students",
+      "Organized workshops and webinars on career readiness",
+      "Ran targeted social media campaigns with 40% increase in platform sign-ups",
+      "Built leadership and outreach skills by engaging student communities",
     ],
-    technologies: ["Digital Marketing", "Social Media", "Event Management", "Leadership"]
-  }
+    technologies: [
+      "Digital Marketing",
+      "Event Management",
+      "Social Media",
+      "Leadership",
+    ],
+  },
 ];
 
 export function Experience() {
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,13 +73,18 @@ export function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Professional <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
+            Professional{" "}
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Experience
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Building impactful solutions and leading initiatives across different domains
+            Hands-on experience across startups, open-source, and fellowships —
+            building impactful, scalable solutions.
           </p>
         </motion.div>
 
+        {/* Experience Cards */}
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
@@ -90,7 +104,9 @@ export function Experience() {
                           {exp.role}
                         </h3>
                       </div>
-                      <p className="text-lg font-semibold text-primary mb-2">{exp.company}</p>
+                      <p className="text-lg font-semibold text-primary mb-2">
+                        {exp.company}
+                      </p>
                       <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-4">
                         <div className="flex items-center">
                           <MapPin className="h-4 w-4 mr-1" />
@@ -111,6 +127,7 @@ export function Experience() {
                     {exp.description}
                   </p>
 
+                  {/* Achievements */}
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 flex items-center">
                       <TrendingUp className="h-4 w-4 mr-2 text-primary" />
@@ -123,16 +140,22 @@ export function Experience() {
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: (index * 0.2) + (achIndex * 0.1) }}
+                          transition={{
+                            duration: 0.5,
+                            delay: index * 0.2 + achIndex * 0.1,
+                          }}
                           className="flex items-start"
                         >
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
-                          <span className="text-muted-foreground">{achievement}</span>
+                          <span className="text-muted-foreground">
+                            {achievement}
+                          </span>
                         </motion.li>
                       ))}
                     </ul>
                   </div>
 
+                  {/* Technologies */}
                   <div>
                     <h4 className="font-semibold mb-3 flex items-center">
                       <Users className="h-4 w-4 mr-2 text-primary" />
@@ -145,9 +168,15 @@ export function Experience() {
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.3, delay: (index * 0.2) + (techIndex * 0.05) }}
+                          transition={{
+                            duration: 0.3,
+                            delay: index * 0.2 + techIndex * 0.05,
+                          }}
                         >
-                          <Badge variant="outline" className="text-xs hover:bg-primary/10 transition-colors">
+                          <Badge
+                            variant="outline"
+                            className="text-xs hover:bg-primary/10 transition-colors"
+                          >
                             {tech}
                           </Badge>
                         </motion.div>
