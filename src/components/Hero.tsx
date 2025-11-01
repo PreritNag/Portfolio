@@ -81,7 +81,7 @@ export function Hero() {
                 variant="secondary"
                 size="lg"
                 className="hover:shadow-md transition-all duration-300"
-                onClick={() => window.open("https://drive.google.com/file/d/18t5NqpnUp2FIBuWbGOMQ6YuU1VrOferX/view?usp=drivesdk", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/12c2c4KZ6VMGXIBtSX_hU_B25fVNpf3gn/view?usp=sharing", "_blank")}
               >
                 View Resume
                 <ExternalLink className="ml-2 h-4 w-4" />

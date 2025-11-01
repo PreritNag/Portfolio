@@ -1,62 +1,25 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { CalendarDays, MapPin, Building2, Users, TrendingUp } from "lucide-react";
+import { CalendarDays, MapPin, Building2, TrendingUp, Users } from "lucide-react";
 
 const experiences = [
-  
   {
-    company: "OpenWise & RuxaiLab",
-    role: "Open Source Contributor",
+    company: "InnoByte Services",
+    role: "Full Stack Developer Intern",
     location: "Remote",
-    period: "2025 - Present",
-    type: "Open Source",
+    period: "Nov 2023 - Present",
+    type: "Internship",
     description:
-      "Contributing to open-source projects in web development and NLP pipelines.",
+      "Engineered scalable web applications and RESTful APIs using modern full-stack technologies.",
     achievements: [
-      "Revamped OpenWise UI with React.js + TypeScript, improving API efficiency by 20%",
-      "Refined NLP pipelines in Python for RuxaiLab, eliminating bugs and improving documentation",
-      "Authored 15+ pull requests with 2+ merged into main branches",
-      "Collaborated with maintainers through reviews and issue triaging",
+      "Engineered RESTful Blog API using Node.js + Express.js + MongoDB, delivering 15+ CRUD endpoints in 25-day sprint",
+      "Implemented JWT authentication & RBAC, securing 100% of API endpoints and enabling role-based permissions for users",
+      "Optimized MongoDB schemas with indexing, improving query performance by 40% and reducing response times to <200ms",
+      "Developed comprehensive test suites achieving 95%+ code coverage across 50+ unit/integration tests with robust error handling",
+      "Created Swagger documentation covering 100% of API endpoints, reducing frontend integration time by 60%",
     ],
-    technologies: ["React.js", "TypeScript", "Python", "NLP", "Machine Learning"],
-  },
-  {
-    company: "IBM SkillsBuild",
-    role: "Fellow",
-    location: "Remote",
-    period: "Aug 2025 - Present",
-    type: "Fellowship",
-    description:
-      "Selected from 10,000+ applicants for a full-stack intensive fellowship by IBM.",
-    achievements: [
-      "Built 5+ projects with React, Node.js, and MongoDB meeting 99.8% uptime requirements",
-      "Improved API performance by 40% with optimized backend design and database indexing",
-      "Implemented JWT authentication serving 1,000+ users with 100% compliance",
-      "Collaborated in agile teams, practicing test automation & code reviews",
-    ],
-    technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT", "Agile"],
-  },
-  {
-    company: "Internshala",
-    role: "Campus Ambassador",
-    location: "Remote",
-    period: "Mar 2024 - Present",
-    type: "Leadership",
-    description:
-      "Selected among 15,000+ applicants for this nationwide student ambassador program.",
-    achievements: [
-      "Promoted career and internship opportunities to 5,000+ students",
-      "Organized workshops and webinars on career readiness",
-      "Ran targeted social media campaigns with 40% increase in platform sign-ups",
-      "Built leadership and outreach skills by engaging student communities",
-    ],
-    technologies: [
-      "Digital Marketing",
-      "Event Management",
-      "Social Media",
-      "Leadership",
-    ],
+    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "REST APIs", "Swagger", "Test Automation"],
   },
 ];
 
@@ -79,8 +42,7 @@ export function Experience() {
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Hands-on experience across startups, open-source, and fellowships —
-            building impactful, scalable solutions.
+            Hands-on experience in full-stack development — building scalable and efficient solutions.
           </p>
         </motion.div>
 
